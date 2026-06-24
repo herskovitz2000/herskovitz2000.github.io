@@ -1,7 +1,128 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
 <meta name="google-site-verification" content="djuEPbpDsvzl88r_N44yneJmbWEvVvQqA9pMcf1F8Hg" />
+<title>Music Trackr — Apple Music play count stats, on your iPhone</title>
+<meta name="description" content="Music Trackr is a free iOS app that shows your real listening history — top songs, albums, artists, genres, playlists, and total time — read straight from your iPhone. 100% on-device and private." />
+<link rel="canonical" href="https://herskovitz2000.github.io/" />
+<meta property="og:title" content="Music Trackr — Apple Music play count stats" />
+<meta property="og:description" content="See your real listening history: top songs, albums, artists, total time. Free, on-device, private." />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://herskovitz2000.github.io/" />
+<style>
+  :root {
+    --bg: #0d0b14;
+    --surface: #17131f;
+    --border: rgba(255,255,255,0.08);
+    --text: #f3f1f7;
+    --muted: #b6b1c4;
+    --accent: #b794f6;
+    --accent-2: #f0abc4;
+  }
+  @media (prefers-color-scheme: light) {
+    :root {
+      --bg: #faf9fc;
+      --surface: #ffffff;
+      --border: rgba(20,16,30,0.10);
+      --text: #1c1726;
+      --muted: #5d5870;
+      --accent: #6b4bd6;
+      --accent-2: #c0457f;
+    }
+  }
+  * { box-sizing: border-box; }
+  html { -webkit-text-size-adjust: 100%; }
+  body {
+    margin: 0;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+  }
+  .wrap { max-width: 720px; margin: 0 auto; padding: 0 24px; }
+  header { text-align: center; padding: 80px 0 48px; }
+  .logo {
+    width: 84px; height: 84px; border-radius: 20px;
+    background: linear-gradient(135deg, var(--accent), var(--accent-2));
+    display: inline-flex; align-items: center; justify-content: center;
+    margin-bottom: 24px;
+  }
+  .logo svg { width: 44px; height: 44px; fill: #fff; }
+  h1 { font-size: 40px; line-height: 1.1; margin: 0 0 12px; letter-spacing: -0.02em; }
+  .tagline { font-size: 19px; color: var(--muted); margin: 0 auto 32px; max-width: 440px; }
+  .cta {
+    display: inline-flex; align-items: center; gap: 10px;
+    background: var(--text); color: var(--bg);
+    text-decoration: none; font-weight: 600; font-size: 17px;
+    padding: 14px 26px; border-radius: 14px;
+    transition: transform 0.15s ease, opacity 0.15s ease;
+  }
+  .cta:hover { transform: translateY(-1px); opacity: 0.92; }
+  .cta svg { width: 22px; height: 22px; fill: currentColor; }
+  .features { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; padding: 24px 0 8px; }
+  @media (max-width: 540px) { .features { grid-template-columns: 1fr; } h1 { font-size: 32px; } header { padding: 56px 0 36px; } }
+  .card {
+    background: var(--surface); border: 1px solid var(--border);
+    border-radius: 16px; padding: 22px 24px;
+  }
+  .card h2 { font-size: 17px; margin: 0 0 6px; }
+  .card p { font-size: 15px; color: var(--muted); margin: 0; }
+  .privacy {
+    margin: 40px 0 8px; padding: 26px 28px; border-radius: 16px;
+    border: 1px solid var(--border);
+    background: var(--surface);
+    text-align: center;
+  }
+  .privacy h2 { font-size: 20px; margin: 0 0 8px; }
+  .privacy p { color: var(--muted); margin: 0 auto; max-width: 480px; font-size: 15px; }
+  footer {
+    text-align: center; color: var(--muted); font-size: 14px;
+    padding: 56px 0 64px;
+  }
+  footer a { color: var(--accent); text-decoration: none; }
+  footer a:hover { text-decoration: underline; }
+  .dot { margin: 0 8px; opacity: 0.5; }
+</style>
 </head>
-<body></body>
+<body>
+  <div class="wrap">
+    <header>
+      <div class="logo" aria-hidden="true">
+        <svg viewBox="0 0 24 24"><path d="M12 3v10.55A4 4 0 1 0 14 17V7h4V3h-6z"/></svg>
+      </div>
+      <h1>Music Trackr</h1>
+      <p class="tagline">Your real Apple Music listening history — top songs, albums, artists, and total time, read straight from your iPhone.</p>
+      <a class="cta" href="https://apps.apple.com/us/app/music-trackr/id6745852620">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M16.36 12.78c-.02-2.3 1.88-3.4 1.96-3.45-1.07-1.56-2.73-1.78-3.32-1.8-1.41-.14-2.76.83-3.48.83-.72 0-1.82-.81-3-.79-1.54.02-2.96.9-3.75 2.28-1.6 2.78-.41 6.9 1.15 9.16.76 1.1 1.67 2.34 2.86 2.29 1.15-.05 1.58-.74 2.97-.74 1.38 0 1.77.74 2.98.72 1.23-.02 2.01-1.12 2.76-2.23.87-1.28 1.23-2.52 1.25-2.58-.03-.01-2.4-.92-2.42-3.65zM14.13 6.06c.64-.78 1.07-1.85.95-2.93-.92.04-2.04.61-2.7 1.38-.59.69-1.11 1.79-.97 2.85 1.03.08 2.08-.52 2.72-1.3z"/></svg>
+        Download on the App Store
+      </a>
+    </header>
+
+    <main>
+      <section class="features" aria-label="Features">
+        <div class="card"><h2>Top everything</h2><p>Your most-played songs, albums, artists, genres, and playlists — ranked by what you actually listen to.</p></div>
+        <div class="card"><h2>Total listening time</h2><p>See how much time you've really spent listening, plus skip counts and full per-item drill-downs.</p></div>
+        <div class="card"><h2>Shareable cards</h2><p>Turn your top songs or albums into a beautiful card to share with friends or on social.</p></div>
+        <div class="card"><h2>Free &amp; on-device</h2><p>No account, no sign-in. Free with a one-time in-app purchase to remove the banner ad.</p></div>
+      </section>
+
+      <section class="privacy">
+        <h2>Completely private</h2>
+        <p>Music Trackr never uploads your listening data anywhere. Everything is read from your own music library and stays on your device. Your music history is yours alone.</p>
+      </section>
+    </main>
+
+    <footer>
+      <p>Made by Nathan Herskovitz</p>
+      <p>
+        <a href="https://apps.apple.com/us/app/music-trackr/id6745852620">App Store</a>
+        <span class="dot">·</span>
+        <a href="mailto:nathanherskovitz@gmail.com">Support</a>
+      </p>
+    </footer>
+  </div>
+</body>
 </html>
